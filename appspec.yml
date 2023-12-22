@@ -5,5 +5,5 @@ Resources:
       Properties:
         TaskDefinition: arn:aws:ecs:us-east-1:156099046999:task-definition/react-taskdef:1
         LoadBalancerInfo:
-          ContainerName: "bettercomms-api"
+          ContainerName: "react-app"
           ContainerPort: 80
