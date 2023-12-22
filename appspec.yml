@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: arn:aws:ecs:us-east-1:156099046999:task-definition/react-taskdef:1
+        LoadBalancerInfo:
+          ContainerName: "bettercomms-api"
+          ContainerPort: 80
