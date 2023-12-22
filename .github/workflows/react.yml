@@ -1,0 +1,31 @@
+name: react to s3 zip
+
+on: workflow_dispatch
+
+jobs:
+  upload:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install Zip Library
+      run:  sudo apt-get install zip -y
+
+    - name: Create App folder
+      run:  mkdir app
+
+    - name: Compress files
+      run:  zip -r app/dist.zip . -x react.yml
+
+    - name: Configure AWS credentials
+      uses: shallwefootball/upload-s3-action@v1.3.3
+      with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: 'bettercomms-backend'
+          aws-region: 'eu-west-1'
+          source_dir: 'app/'
+          destination_dir: ''
