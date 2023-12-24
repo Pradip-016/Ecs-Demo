@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: arn:aws:ecs:us-east-1:156099046999:task-definition/react-taskdef:1
+        TaskDefinition: arn:aws:ecs:us-east-1:156099046999:task-definition/react-task-def:2
         LoadBalancerInfo:
           ContainerName: "react-app"
           ContainerPort: 80

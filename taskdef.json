@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:156099046999:task-definition/react-taskdef:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:156099046999:task-definition/react-task-def:2",
     "containerDefinitions": [
         {
             "name": "react-app",
-            "image": "156099046999.dkr.ecr.us-east-1.amazonaws.com/react-app",
+            "image": "156099046999.dkr.ecr.us-east-1.amazonaws.com/react-app:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "react-app-80-tcp",
+                    "name": "tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -24,7 +24,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/",
+                    "awslogs-group": "/ecs/react-task-def",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -32,11 +32,11 @@
             }
         }
     ],
-    "family": "react-taskdef",
+    "family": "react-task-def",
     "taskRoleArn": "arn:aws:iam::156099046999:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::156099046999:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -81,7 +81,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-12-22T11:20:16.035Z",
+    "registeredAt": "2023-12-24T12:02:10.384Z",
     "registeredBy": "arn:aws:iam::156099046999:user/Pradip",
     "tags": []
 }
