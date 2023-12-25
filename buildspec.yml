@@ -5,7 +5,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 766164446869.dkr.ecr.ap-south-1.amazonaws.com
-      - 766164446869.dkr.ecr.ap-south-1.amazonaws.com/react-app
+      - REPOSITORY_URI=766164446869.dkr.ecr.ap-south-1.amazonaws.com/react-app
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - if [[ $COMMIT_HASH == *"."* ]]; then (echo "It's there!" && echo "Removing dot" && NEW_COMMIT_HASH=`echo $COMMIT_HASH | sed 's/\.//g'` && echo NEW_COMMIT_HASH - $NEW_COMMIT_HASH && COMMIT_HASH=$NEW_COMMIT_HASH && echo COMMIT_HASH - $COMMIT_HASH); else echo "dot not found"; fi
       - IMAGE_TAG=${COMMIT_HASH:=latest}
