@@ -29,14 +29,3 @@ jobs:
           aws-region: 'us-east-1'
           source_dir: 'app/'
           destination_dir: ''
-
-
-    - name: Sync to S3
-      uses: jakejarvis/s3-sync-action@v0.5.0
-      with:
-        args: --exclude='react.yml' --acl='public-read'
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
-        source-dir: 'app/'
-        dest-dir: 's3://ecs-demo-ec2/'
