@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "<TASK_DEFINITION>",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:766164446869:task-definition/react-app:1",
     "containerDefinitions": [
         {
             "name": "react-app",
-            "image": "<IMAGE>",
+            "image": "766164446869.dkr.ecr.ap-south-1.amazonaws.com/react-app:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -78,6 +78,5 @@
         "operatingSystemFamily": "LINUX"
     },
     "registeredAt": "2023-12-25T09:14:23.437Z",
-    "registeredBy": "arn:aws:iam::766164446869:user/pradeep",
-    "tags": []
+    "registeredBy": "arn:aws:iam::766164446869:user/pradeep"
 }
