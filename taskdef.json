@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:156099046999:task-definition/react-task-def:2",
+    "taskDefinitionArn": "<TASK_DEFINITION>",
     "containerDefinitions": [
         {
             "name": "react-app",
-            "image": "156099046999.dkr.ecr.us-east-1.amazonaws.com/react-app:latest",
+            "image": "<IMAGE>",
             "cpu": 0,
             "portMappings": [
                 {
