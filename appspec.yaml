@@ -7,3 +7,6 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "react-app"
           ContainerPort: 80
+    TaskTags:
+        - key: environment
+          value: production
