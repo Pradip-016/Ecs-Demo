@@ -1,13 +1,14 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:766164446869:task-definition/react-app:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:766164446869:task-definition/task-def-1:1",
     "containerDefinitions": [
         {
             "name": "react-app",
             "image": "766164446869.dkr.ecr.ap-south-1.amazonaws.com/react-app:latest",
-            "cpu": 0,
+            "cpu": 1024,
+            "memoryReservation": 1024,
             "portMappings": [
                 {
-                    "name": "react-app-80-tcp",
+                    "name": "tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -24,7 +25,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/react-app",
+                    "awslogs-group": "/ecs/task-def-1",
                     "awslogs-region": "ap-south-1",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -32,7 +33,8 @@
             }
         }
     ],
-    "family": "react-app",
+    "family": "task-def-1",
+    "taskRoleArn": "arn:aws:iam::766164446869:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::766164446869:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
@@ -50,6 +52,12 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -77,6 +85,6 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-12-25T09:14:23.437Z",
+    "registeredAt": "2023-12-26T05:48:54.828Z",
     "registeredBy": "arn:aws:iam::766164446869:user/pradeep"
 }
